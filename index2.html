@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioMon Nusantara - Petualangan Satwa</title>
+  <!-- Menggunakan Google Fonts agar tampilan teks terasa premium & buatan desainer asli -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-container">
+    
+    <!-- HEADER & STATUS BAR -->
+    <header class="game-header">
+      <div class="brand">
+        <span class="game-emoji">🌴</span>
+        <h1>BioMon Nusantara</h1>
+      </div>
+      <div class="score-board">
+        <span class="score-icon">🏆</span>
+        <div class="score-text">
+          <small>Skor Anda</small>
+          <span id="player-score">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- AREA UTAMA PROFESOR CELEPUK -->
+    <section class="prof-section">
+      <div class="prof-avatar-wrapper">
+        <!-- Taruh potongan gambar Prof Celepuk membawa cairan kimia di sini -->
+        <img src="images/prof-celepuk.png" alt="Profesor Celepuk" class="prof-avatar">
+      </div>
+      <div class="prof-bubble">
+        <h2>Petualangan Bareng Prof. Celepuk</h2>
+        <p id="prof-text">Halo, penjelajah muda! Selamat datang, petualang! Pilih salah satu gerbang satwa di bawah untuk memulai penjelajahan ekosistem kita.</p>
+      </div>
+    </section>
+
+    <!-- MENU UTAMA: GERBANG TOMBOL SATWA -->
+    <nav class="navigation-area">
+      <div class="btn-group"> 
+        <!-- Tombol Anoa -->
+        <button class="btn-satwa active-btn" data-satwa="anoa" type="button">
+          <span class="btn-icon"><img src="images/ikon-anoa.png" alt="Ikon Anoa"></span>
+          <span class="btn-text">Anoa</span>
+        </button>
+
+        <!-- Tombol Harimau -->
+        <button class="btn-satwa" data-satwa="harimau" type="button">
+          <span class="btn-icon"><img src="images/ikon-harimau.png" alt="Ikon Harimau"></span>
+          <span class="btn-text">Harimau</span>
+        </button>
+
+        <!-- Tombol Orangutan -->
+        <button class="btn-satwa" data-satwa="orangutan" type="button">
+          <span class="btn-icon"><img src="images/ikon-orangutan.png" alt="Ikon Orangutan"></span>
+          <span class="btn-text">Orangutan</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- PANEL KONTEN DINAMIS SATWA -->
+    <main class="content-panel">
+      <!-- Konten Anoa (Bisa diatur sembunyi/muncul via JavaScript nantinya) -->
+      <article id="panel-anoa" class="satwa-detail">
+        <div class="satwa-header">
+          <span class="badge badge-endemik">Satwa Endemik Sulawesi</span>
+          <span class="badge badge-class">Mamalia Kecil</span>
+          <h3>🦬 Anoa</h3>
+        </div>
+        <p class="satwa-desc">Anoa adalah mamalia kecil yang hidup di hutan pegunungan Sulawesi. Ia memiliki tubuh yang kuat, kaki pendek, dan bisa berlari dengan cepat di area berbatu.</p>
+        <div class="fact-box">
+          <strong>💡 Fakta Menarik:</strong>
+          <p>Anoa termasuk hewan endemik Indonesia dan sangat berperan dalam menjaga keseimbangan ekosistem hutan.</p>
+        </div>
+      </article>
+    </main>
+
+    <!-- AREA MINI KUIS -->
+    <section class="quiz-section">
+      <div class="quiz-header">
+        <span class="quiz-badge">📝 Mini Kuis</span>
+        <h4>Hewan yang hidup di Sulawesi dan termasuk satwa endemik adalah?</h4>
+      </div>
+      <div class="quiz-options">
+        <button class="opt-btn" onclick="checkAnswer(false)">Harimau</button>
+        <button class="opt-btn correct-placeholder" onclick="checkAnswer(true)">Anoa</button>
+        <button class="opt-btn" onclick="checkAnswer(false)">Orangutan</button>
+        <button class="opt-btn" onclick="checkAnswer(false)">Komodo</button>
+      </div>
+    </section>
+
+  <!-- TAMBAHKAN BARIS INI TEPAT DI SINI -->
+  <script src="script.js"></script>
+  <footer class="game-footer">
+  <!-- Tambahkan id="btn-kembali" di bawah ini -->
+  <button class="btn-secondary" id="btn-kembali" type="button">↩️ Kembali ke Menu</button>
+</footer>
+</body>
+</html>
